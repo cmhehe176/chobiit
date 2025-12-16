@@ -1,0 +1,52 @@
+{
+  "manifest_version": 1,
+  "version": 1,
+  "type": "APP",
+  "homepage_url": {
+    "ja": "https://www.novelworks.jp/chobiit/",
+    "en": "https://www.novelworks.jp/chobiit/systeminfous/",
+    "zh": "https://www.novelworks.jp/chobiit/systeminfous/"
+  },
+  "desktop": {
+    "js": [
+    ],
+    "css": [
+    ]
+  },
+  "icon": "image/chobiit.png",
+  "config": {
+    "html": "html/config.html",
+    "js": [
+      "https://js.cybozu.com/jquery/3.3.1/jquery.min.js",
+      "https://js.cybozu.com/momentjs/2.15.1/moment.min.js",
+      "https://js.cybozu.com/sweetalert/v2.1.2/sweetalert.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js",
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.19.1/trumbowyg.min.js",
+      "https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js",
+      "https://novel-kintone-plugin-prod.s3.amazonaws.com/authorization/NovelPluginAuthorization.js",
+      "https://novel-kintone-plugin-prod.s3.amazonaws.com/utility/NovelErrorMessage.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js",
+      "https://chobiit-config-prod.s3.amazonaws.com/config.js"
+    ],
+    "css": [
+      "css/51-modern-default.css",
+      "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
+      "https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css",
+      "https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.19.1/ui/trumbowyg.min.css",
+      "https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css",
+      "https://chobiit-config-prod.s3.amazonaws.com/config.css"   
+    ]
+  },
+  "name": {
+    "en": "Chobiit setting plugin",
+    "ja": "Chobiit設定プラグイン",
+    "zh": "Chobiit設定外掛程式"
+  },
+  "description": {
+    "en": "When using Chobiit, it's a plugin where you set necessary setting information.",
+    "ja": "Chobiit利用時に必要な設定プラグインです。",
+    "zh": "設定Chobiit用的外掛程式"
+  }
+}

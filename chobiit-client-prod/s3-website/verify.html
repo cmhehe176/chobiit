@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <style>
+          #loginContainer{
+            min-height : 100vh;
+            height: 100%
+        }
+
+
+        .chobit-logo{
+            margin-bottom :20px;
+            margin-top: 20px;
+        }
+
+        li {
+            font-weight: normal;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .form-control {
+            height: 50px;
+            padding-left: 2rem;
+            border-radius: 5rem;
+            border: none;
+        }
+
+         .form-control:focus {
+           
+            border: none;
+            box-shadow: none;
+        }
+        .form-custom .form-group {
+            width: calc(100% - 15px);
+            margin-right: 15px;
+        }
+
+        .form-custom .btn {
+            min-width: 120px;
+            padding: 12px !important;
+            border-radius: 25px !important;
+        }
+
+        .styleText {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .custom-button {
+             min-width: 185px !important;
+         }
+ 
+         .not-allowed {
+             cursor: not-allowed;
+	    }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+    <div class="container" id="loginContainer">
+        <div class="col-sm-12 col-md-8 m-auto">
+            <div class="m-0 align-self-center text-center text-white font-weight-bold company-name" id="showName" >
+            </div>
+            <div  id="verify-form" class="">
+                <p class="mb-1 styleText">認証コードを指定のメールアドレスに送付しました。</p>
+                <p class="mb-4 styleText">メールをご確認頂き、記載された認証コードを入力して登録を完了してください。<span class="font-weight-bold" id="mail-text"></span></p>
+                <div class="d-flex form-custom align-items-center">
+                    <div class="form-group mb-0">
+                        <input type="text" name="verify_code" id="verify_code" class="form-control"/>
+                    </div>
+                    <div class="d-flex">
+                        <div class="mr-3">
+                            <button type="button" class="btn btn-primary btn-block" id="verify-btn">
+                                <span>認証する</span>
+                            </button>
+                        </div>
+                    </div>                      
+                </div>
+
+
+
+                <div class="mt-4">
+                    <button type="button" class="btn btn-light custom-button not-allowed" disabled="" id="resend-code" style="border-radius: 5rem;padding: .5rem;">
+                        <span>コードを再送する<span class="time-out"></span></span>
+                    </button>
+                </div>  
+            </div>
+
+            <div class="mb-5 mt-4" style="color: white;">
+                <li style="list-style: none;">※迷惑メール防止機能等を設定されている場合、メールが届かないことがあります</li>
+                <li>ドメイン指定受信設定をされている場合は、「chobiit.me」からのメールが受信できるようご設定ください。</li>
+                <li>メールアドレス指定受信設定をされている場合は、「support@chobiit.me」からのメールが受信できるようご設定ください</li>
+                <li style="list-style: none;">（設定方法は携帯電話のキャリアや販売店にお問い合わせください。）</li>
+                <!-- <li style="
+                    list-style: none;
+                    padding-top: 20px;
+                ">※パスワードは大文字・小文字・数字を組み合わせた6文字以上の英数字を入力してください</li> -->
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://js.cybozu.com/sweetalert/v2.1.2/sweetalert.min.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- <script src="./cognito/amazon-cognito-auth.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.688.0.min.js"></script> 
+    <script src="./cognito/amazon-cognito-identity.min.js"></script> -->
+    <script src="./js/verify.js"></script>
+</body>
+</html>

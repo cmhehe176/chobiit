@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <style>
+
+        body {
+            position: relative;
+        }
+
+        #loginContainer{
+            min-height : 100vh;
+            height: 100%
+        }
+
+
+        .chobit-logo{
+            margin-bottom :20px;
+            margin-top: 20px;
+        }
+
+        li {
+            font-weight: normal;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .form-control {
+            height: 65px;
+            padding-left: 2rem;
+            border-radius: 5rem;
+            border: none;
+        }
+
+         .form-control:focus {
+           
+            border: none;
+            box-shadow: none;
+        }
+
+        #register-btn {
+            margin-top: 1rem;
+            color: white;
+            border: none;
+            margin-bottom: 2rem;
+            border-radius: 10rem;
+            height: 65px;
+            background: #085263;
+            font-size: 20px;
+            background: -webkit-linear-gradient(top left, #006896 0%, #007396 100%);
+        }
+
+        button#redirect-btn {
+            margin-top: 1rem;
+            padding: 0.6rem;
+            color: white;
+            border: none;
+            margin-bottom: 2rem;
+            border-radius: 10rem;
+            height: 65px;
+            background: orange;
+            font-size: 16px;
+        }
+
+        button#redirect-btn:hover {
+            background: #f78529f5;
+        }
+
+        label.chobiit-label {
+            color: white;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+    <div class="container" id="loginContainer">
+        <div class="col-sm-12 col-md-6 m-auto pt-3">
+            <div class="m-0 align-self-center text-center text-white font-weight-bold company-name" id="showName"  style="padding-bottom: 0rem;">
+            </div>
+
+            <div class="m-0 align-self-center text-center text-white font-weight-bold">
+                <div class="pt-2 pb-2" id="register-title">ユーザー登録</div>
+                
+                <!-- <div class="mb-5 mt-4">
+                    <li style="list-style: none;">※迷惑メール防止機能等を設定されている場合、メールが届かないことがあります</li>
+                    <li>ドメイン指定受信設定をされている場合は、「chobiit.me」からのメールが受信できるようご設定ください。</li>
+                    <li>メールアドレス指定受信設定をされている場合は、「jitan-wakayama@mail.jtb.com」からのメールが受信できるようご設定ください</li>
+                    <li style="list-style: none;">（設定方法は携帯電話のキャリアや販売店にお問い合わせください。）</li>
+                    <li style="
+                        list-style: none;
+                        padding-top: 20px;
+                    ">※パスワードは大文字・小文字・数字を組み合わせた6文字以上の英数字を入力してください</li>
+                </div> -->
+            </div>
+            <div class="text-center mb-5" id="alertDiv">
+                <p class="m-0" id="loginNameAlert">ログイン名を入力してください</p>
+                <p class="m-0" id="usernameAlert">メールアドレスを入力してください</p>
+                <p class="m-0" id="passwordAlert">パスワードを入力してください</p>
+            </div>
+            <form  method="POST" id="register-form" class="">
+                <div class="form-group">
+                    <label class="chobiit-label">半角英数字でログイン名を入力して下さい。</label>
+                    <input type="text" name="name" id="loginName" class="form-control" placeholder="ログイン名"/>
+                </div>
+                <div class="form-group pt-4">
+                    <label class="chobiit-label">認証・ご連絡に利用するメールアドレスを入力してください。</label>
+                    <input type="text" name="email" id="email" class="form-control" placeholder="メールアドレス"/>
+                </div>
+
+                <div class="form-group pt-4">
+                    <label class="chobiit-label">ログイン時に利用するパスワードを入力してください。</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="パスワード：半角英数字"/>
+                </div>
+
+                <div class="form-group pt-4">
+                    <input type="password" name="re-password" id="re-password" class="form-control" placeholder="パスワードの再入力"/>
+                </div>
+
+                <br>
+                <button type="button" class="btn btn-block" id="register-btn">
+                    <span>登録</span>
+                </button>
+                <button onclick="location.href='./login.html'" id="redirect-btn" class="btn btn-block" type="button">
+                    <span>既に登録済みの方はこちら</span>
+                </button>
+            </form>
+
+            <!-- <div class="m-0 align-self-center text-center " style="padding-bottom: 1rem;">
+                <a style="font-size: 14px;color: white;" href="./login.html">
+                    事業者サポート給付金登録済みの方はこちら
+                </a>
+            </div> -->
+        </div>
+    </div>
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://js.cybozu.com/sweetalert/v2.1.2/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js" type="text/javascript"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- <script src="./cognito/amazon-cognito-auth.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.688.0.min.js"></script>  -->
+    <!-- <script src="./cognito/amazon-cognito-identity.min.js"></script> -->
+    <script src="./js/register.js"></script>
+</body>
+</html>

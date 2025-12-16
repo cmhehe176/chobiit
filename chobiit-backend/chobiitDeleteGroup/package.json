@@ -1,0 +1,15 @@
+{
+  "name": "chobitoneAddRecord-85246d26-57bb-4327-b8c6-2999297afc9f",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}

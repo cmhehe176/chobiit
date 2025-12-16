@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="<%= chobiitLang %>">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chobiit</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        iframe {
+            width: 100%;
+            overflow: scroll;
+            border: none;
+        }
+
+        nav {
+            padding-top: 20px;
+        }
+        @media screen and (max-width: 767.98px) {
+            nav {
+                padding-top: 0px;
+            }
+        }
+        .follow{
+            height: 70px;
+        }
+
+        .app-menu-icon {
+            display: inline-block;
+            vertical-align: middle;
+            box-sizing: border-box;
+            border: none;
+            margin-left: 8px;
+            width: 48px;
+            height: 48px;
+            background-color: #fff;
+            background-position: center center;
+            background-repeat: no-repeat;
+            color: transparent;
+        }
+
+        .app-menu-icon:focus {
+            outline: none;
+        }
+
+        .app-menu-icon:hover {
+            color: transparent;
+            cursor: pointer;
+        }
+
+        .add-record-btn {
+            background-image: url(../images/add-record.png);
+        }
+
+        .add-record-btn:hover {
+            background-image: url(../images/add-record-active.png);
+        }
+
+        .edit-record-btn {
+            background-image: url(../images/edit-record.png);
+        }
+
+        .edit-record-btn:hover {
+            background-image: url(../images/edit-record-active.png);
+        }
+
+        .duplicate-record-btn {
+            background-image: url(../images/duplicate-record.png);
+        }
+
+        .duplicate-record-btn:hover {
+            background-image: url(../images/duplicate-record-active.png);
+        }
+
+        .edit-menu {
+            display: flex;
+            align-items: center;
+            visibility: hidden;
+        }
+
+        .action-btn {
+            border-radius: 5rem;
+            color: #fff;
+            background: #2196F3;
+            margin: .75rem 1rem 2rem 1rem;
+        }
+
+        .action-btn:hover {
+            background: #2183f3;
+        }
+    </style>
+
+    <script src="../js/config.js"></script>
+</head>
+
+<body>
+    <div id="loader" class="se-pre-con" style="display: none"></div>
+        <div id="content">
+            <!-- Header -->
+
+            <div class="col-md-12 px-0 pt-2" id="mainContainer">
+                <!-- <p class="d-sm-block d-md-none">
+                    <button type="button" class="btn btn-outline-info btn-sm" onclick="toggleClass(document.getElementById('rowOffCanvas'), 'active')">
+                        <i class="fas fa-angle-left"></i>
+                    </button>
+                </p> -->
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="need-domain-name"></a></li>
+                        <li class="breadcrumb-item public-list-record-link"><a href="#" class="need-app-name"></a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><%= message.info["record-detail"] %></li>
+                    </ol>
+                </nav>
+
+                <!-- Content -->
+                <div id="mainContent">
+                    <div class="d-flex flex-wrap justify-content-between follow" style="top: 0; left: 0 ">
+                        <div class="edit-menu" id="editMenu">
+                            <button type="button" class="btn btn-cancel mr-1" id="cancelEditBtn"><%= message.common["cancel-title"] %></button>
+                            <button type="button" class="btn btn-primary" id="submitEditBtn"><%= message.common["save-title"] %></button>
+                        </div>
+                        <div class="app-menu" id="appMenu">
+                            <button class="app-menu-icon add-record-btn" title="<%= message.info["create-a-record"] %>" id="addRecordBtn"></button>
+                            <button class="app-menu-icon duplicate-record-btn" title="<%= message.info["reuse-records"] %>" id="duplicateRecordBtn"></button>
+                        </div>
+                    </div>
+
+                    <div id="action-button" style="display: none;"></div>
+
+                    <iframe id="iframe" src=""></iframe>
+                </div>
+
+                <div id="myModal" class="modal">
+                    <span class="img-close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                    <a class="img-down btn btn-info">
+                        <i class="fas fa-cloud-download-alt"></i><%= message.common["action-download"] %>
+                    </a>
+                </div>
+
+                <!-- End content -->
+            </div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://js.cybozu.com/sweetalert/v2.1.2/sweetalert.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/p-detail-record.js"></script>
+</body>
+
+</html>

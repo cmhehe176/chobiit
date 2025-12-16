@@ -1,0 +1,46 @@
+{
+  "name": "chobiit-backend",
+  "version": "1.0.0",
+  "description": "Chobiit Backend.",
+  "scripts": {
+    "set-common-envs:jp:dev": "SYSTEM_ENV=dev dotenv -e ./../.env.jp.dev -- node --require esbuild-register scripts/set-common-environment.ts",
+    "set-common-envs:us:dev": "SYSTEM_ENV=dev dotenv -e ./../.env.us.dev -- node --require esbuild-register scripts/set-common-environment.ts",
+    "set-common-envs:jp:prod": "SYSTEM_ENV=prod dotenv -e ./../.env.jp.prod -- node --require esbuild-register scripts/set-common-environment.ts",
+    "set-common-envs:us:prod": "SYSTEM_ENV=prod dotenv -e ./../.env.us.prod -- node --require esbuild-register scripts/set-common-environment.ts",
+    "build:dev": "SYSTEM_ENV=dev node --require esbuild-register scripts/build.ts",
+    "build:prod": "SYSTEM_ENV=prod node --require esbuild-register scripts/build.ts",
+    "deploy:jp:dev": "SYSTEM_ENV=dev dotenv -e ./../.env.jp.dev -- node --require esbuild-register scripts/deploy.ts",
+    "deploy:us:dev": "SYSTEM_ENV=dev dotenv -e ./../.env.us.dev -- node --require esbuild-register scripts/deploy.ts",
+    "deploy:jp:prod": "SYSTEM_ENV=prod dotenv -e ./../.env.jp.prod -- node --require esbuild-register scripts/deploy.ts",
+    "deploy:us:prod": "SYSTEM_ENV=prod dotenv -e ./../.env.us.prod -- node --require esbuild-register scripts/deploy.ts"
+  },
+  "keywords": [],
+  "author": "Novelworks",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.468.0",
+    "@aws-sdk/client-dynamodb": "^3.441.0",
+    "@aws-sdk/client-lambda": "^3.445.0",
+    "@aws-sdk/lib-dynamodb": "^3.444.0",
+    "@kintone/kintone-js-sdk": "^0.7.8",
+    "aws-sdk": "^2.1414.0",
+    "axios": "^1.6.0",
+    "chobiit-common": "file:../chobiit-common",
+    "dayjs": "^1.11.9",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@kintone/rest-api-client": "^5.0.5",
+    "@types/adm-zip": "^0.5.0",
+    "@types/json-diff": "^1.0.0",
+    "@types/prompts": "^2.4.4",
+    "@types/request": "^2.48.8",
+    "adm-zip": "^0.5.10",
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.2.1",
+    "esbuild": "^0.18.11",
+    "esbuild-register": "^3.4.2",
+    "json-diff": "^1.0.6",
+    "prompts": "^2.4.2"
+  }
+}

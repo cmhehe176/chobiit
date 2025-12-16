@@ -1,0 +1,56 @@
+{
+  "name": "chobiit-config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build:jp:dev": "SYSTEM_ENV=dev dotenv -e ./../.env.jp.dev -- ts-node scripts/build.ts",
+    "build:us:dev": "SYSTEM_ENV=dev dotenv -e ./../.env.us.dev -- ts-node scripts/build.ts",
+    "build:jp:prod": "SYSTEM_ENV=prod dotenv -e ./../.env.jp.prod -- ts-node scripts/build.ts",
+    "build:us:prod": "SYSTEM_ENV=prod dotenv -e ./../.env.us.prod -- ts-node scripts/build.ts",
+    "deploy:jp:dev": "npm run build:jp:dev && SYSTEM_ENV=dev dotenv -e ./../.env.jp.dev -- ts-node scripts/deploy.ts",
+    "deploy:us:dev": "npm run build:us:dev && SYSTEM_ENV=dev dotenv -e ./../.env.us.dev -- ts-node scripts/deploy.ts",
+    "deploy:jp:prod": "npm run build:jp:prod && SYSTEM_ENV=prod dotenv -e ./../.env.jp.prod -- ts-node scripts/deploy.ts",
+    "deploy:us:prod": "npm run build:us:prod && SYSTEM_ENV=prod dotenv -e ./../.env.us.prod -- ts-node scripts/deploy.ts",
+    "package:jp:dev": "./scripts/package.sh dev jp",
+    "package:us:dev": "./scripts/package.sh dev us",
+    "package:jp:prod": "./scripts/package.sh prod jp",
+    "package:us:prod": "./scripts/package.sh prod us",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Novelworks",
+  "license": "ISC",
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.369.0",
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.24.8",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7",
+    "@kintone/plugin-packer": "^7.0.4",
+    "@types/jest": "^29.5.12",
+    "@types/jquery": "^3.5.30",
+    "@types/prompts": "^2.4.4",
+    "babel-jest": "^29.7.0",
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.2.1",
+    "esbuild": "^0.18.11",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^24.1.1",
+    "prompts": "^2.4.2",
+    "ts-jest": "^29.2.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@kintone/rest-api-client": "^5.0.5",
+    "axios": "^1.6.2",
+    "chobiit-common": "file:../chobiit-common",
+    "text-encoder": "^0.0.4",
+    "util": "^0.12.5"
+  }
+}

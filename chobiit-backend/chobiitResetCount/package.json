@@ -1,0 +1,15 @@
+{
+  "name": "chobitonepubliclistrecords",
+  "version": "1.0.0",
+  "description": "get list of records by app id for no-authen app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DatPham",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.24.0",
+    "request": "^2.88.0"
+  }
+}

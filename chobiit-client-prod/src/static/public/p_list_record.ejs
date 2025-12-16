@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="<%= chobiitLang %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chobiit</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link href='../fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='../fullcalendar/daygrid/main.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://chobiit.s3.amazonaws.com/lib/datetimepicker/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+
+        table th {
+            white-space: nowrap;
+            background: white;
+            position: sticky !important;
+            top: -57px;
+            box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.08);
+        }
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            table th { 
+                top: 0px;
+            }
+        }
+
+        @supports (-ms-accelerator:true) {
+            table th { 
+                top: 0px;
+            }
+        }
+
+        div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+            justify-content: flex-start;
+            margin-top: .85rem;
+        }
+    </style>
+
+    <script src="../js/config.js"></script>
+</head>
+
+<body>
+    <div id="loader" class="se-pre-con"></div>
+        <div id="content">
+           
+
+            <div class="col-md-12 px-0 pt-2" id="mainContainer">
+               <!--  <p class="d-sm-block d-md-none">
+                    <button type="button" class="btn btn-outline-info btn-sm" onclick="toggleClass(document.getElementById('rowOffCanvas'), 'active')">
+                        <i class="fas fa-angle-left"></i>
+                    </button>
+                </p> -->
+
+                <nav aria-label="breadcrumb">
+                </nav>
+
+                <!-- Content -->
+                <div id="mainContent">
+                        <div class="filter border-2-ctblack padding-default" id="filter" style="display: none;">
+                                <h4 style="padding-bottom: 7px; font-weight: 600 ; color: #212529"><%= message.info["filter"] %></h4>
+                                <div class="filter-list mb-3" id="filterList">
+                                    <div class="filter-row">
+                                        <div class="filter-content col-11">
+                                            <div class="filter-field col-sm-12 col-md-3">
+                                                <select class="form-control input-filter-field"></select>
+                                            </div>
+                                            <div class="filter-type col-sm-12 col-md-2">
+                                                <select class="form-control input-filter-type"></select>
+                                            </div>
+                                            <div class="filter-value col-sm-12 col-md-7">
+                                                <input class="form-control input-filter-value">
+                                            </div>
+                                        </div>
+        
+                                        <div class="filter-delete col-1" style="display: none;">
+                                            <a title="<%= message.common["action-delete"] %>"></a>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="row">
+                                    <div class="filter-add col-12" id="filterAdd">
+                                        <a title="<%= message.common["action-create"] %>"></a>
+                                    </div>
+                                </div>
+        
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <div class="pl-1">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="filterTypeMatchAll" name="matchType" class="custom-control-input"
+                                                checked>
+                                            <label class="custom-control-label" for="filterTypeMatchAll">
+                                                <%= message.info["all-conditions-are-met"] %>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="filterTypeMatchAny" name="matchType" class="custom-control-input">
+                                            <label class="custom-control-label" for="filterTypeMatchAny">
+                                                <%= message.info["any-conditions-are-met"] %>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn" id="searchBtn">
+                                            <i class="fas fa-filter"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-reset" id="resetBtn">
+                                            <i class="fas fa-redo"></i>
+                                        </button>
+                                    </div>
+                                </div>
+        
+                                <!-- <div class="border-2-ctblack btn px-5" id="filterTab">
+                                    <i class="fas fa-search"></i> Filter
+                                </div> -->
+                            </div>
+        
+                            <div class="d-flex justify-content-between align-items-end m-3">
+                                <div class="pl-1">
+                                    <button type="button" class="btn btn-info" id="addRecordBtn" style="font-weight: 550;">
+                                        <span><i class="fas fa-plus"></i> <%= message.common["new-creation"] %></span>
+                                    </button>
+                                </div>
+                                <div class="pr-1">
+                                    <button type="button" id="search-selection" class="btn btn-light d-inline" style="font-weight: 550;"><i id='updown-icon'class="fas fa-chevron-down"></i> <%= message.info["filter"] %></button>    
+                                </div>
+                            </div>
+
+                    <div id ="calendar"></div>
+                    <!-- <div class="table-responsive" style="overflow-x: unset;"> -->
+                        <div>
+                            <div class="fc-button-group" >
+                                <button type="button"  class="fc-prev-button fc-button fc-button-primary" aria-label="prev"><span class="fc-icon fc-icon-chevron-left"></span></button>
+                                <button type="button" class="fc-next-button fc-button fc-button-primary" aria-label="next"><span class="fc-icon fc-icon-chevron-right"></span></button>
+                            </div>
+                            <span class="table-info" style="background: none"></span>
+                            <table class="table table-hover table-striped table-bordered" id="recordTable" style="cursor: pointer;">
+                                <thead id="tableHeader">
+                                </thead>
+                                <tbody id="tableBody">
+                                </tbody>
+                            </table>
+                            <div class="fc-button-group" >
+                                <button type="button" class="fc-prev-button fc-button fc-button-primary" aria-label="prev"><span class="fc-icon fc-icon-chevron-left"></span></button>
+                                <button type="button"  class="fc-next-button fc-button fc-button-primary" aria-label="next"><span class="fc-icon fc-icon-chevron-right"></span></button>
+                            </div>
+                            <span class="table-info" style="background: none"></span>
+                        </div>
+                </div>
+
+                <div id="myModal" class="modal">
+                    <span class="img-close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                    <a class="img-down btn btn-info">
+                        <i class="fas fa-cloud-download-alt"></i> <%= message.common["action-download"] %>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://js.cybozu.com/sweetalert/v2.1.2/sweetalert.min.js"></script>
+    <script src="https://js.cybozu.com/lodash/4.17.11/lodash.min.js"></script>
+    <script src="https://chobiit.s3.amazonaws.com/lib/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src='../fullcalendar/core/main.js'></script>
+    <script src='../fullcalendar/daygrid/main.js'></script>
+    <script src='../fullcalendar/core/locales/ja.js'></script>
+    <script src='../fullcalendar/interaction/main.js'></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/p-list-record.js"></script>
+
+</body>
+
+</html>

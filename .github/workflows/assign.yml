@@ -1,0 +1,21 @@
+name: Assign Pull Request Assignee If Not Assigned
+  
+on:
+  pull_request:
+    types: [opened, reopened, review_requested]
+      
+jobs:
+  assign:
+    runs-on: kintone-dev-larger-runner-1
+    permissions: write-all
+    
+    steps:
+      # NOTE: When you debug this workflow, you can look at the event object by the following step.
+      # - run: cat $GITHUB_EVENT_PATH
+      - run: gh pr edit "$PULL_REQUEST_NUMBER" --add-assignee "$ASSIGNEE"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
+          ASSIGNEE: ${{ github.event.pull_request.user.login }}
+        if: ${{ toJSON(github.event.pull_request.assignees) == '[]' }}

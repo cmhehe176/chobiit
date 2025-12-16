@@ -1,0 +1,187 @@
+<mxfile host="app.diagrams.net" modified="2023-07-11T05:36:58.410Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="Hfwti8mB2VP0xRyKo-6q" version="21.5.2" type="device">
+  <diagram name="ページ1" id="cFd87-XxMFX0_LOGLgF4">
+    <mxGraphModel dx="2471" dy="1715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-60" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-70" y="140" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-62" value="A record" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="180" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-61" value="A record" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-5" y="190" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-33" value="CloudFront&lt;br&gt;Distribution" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="305" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-32" value="CloudFront&lt;br&gt;Distribution" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="315" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-1" value="S3 Bucket&lt;br&gt;(client)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="550" y="295" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-2" value="S3&lt;br&gt;config" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="540" y="980" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-3" value="CloudFront&lt;br&gt;Distribution" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="320" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-4" value="CloudFront&lt;br&gt;Distribution" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="330" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-8" value="chobiit&lt;br&gt;利用ユーザー" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="330" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-15" value="A record" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-15" y="200" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-17" value="*****.chobiit.me&lt;br&gt;の名前解決" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="275" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-18" value="HTML, JS, CSS など取得" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="315" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-19" value="クライアントのファイルや適用したカスタマイズなど、フロントエンドで動く静的ファイルを配置" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;size=25;position=0.4;position2=0.25;" vertex="1" parent="1">
+          <mxGeometry x="540" y="220" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-20" value="chobiit&lt;br&gt;管理者" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="980" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-23" value="kintone" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="980" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-24" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" target="x0Aub4gDLJdSEWuk1Uv5-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="1020" as="sourcePoint" />
+            <mxPoint x="110" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-25" value="chobiit 設定画面&lt;br&gt;（プラグイン設定画面）で操作" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="990" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-27" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.875;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="x0Aub4gDLJdSEWuk1Uv5-23" target="x0Aub4gDLJdSEWuk1Uv5-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="1020" as="sourcePoint" />
+            <mxPoint x="450" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-28" value="プラグインで利用する JS, HTML を取得" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="990" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-34" value="・ドメインごとに1つ&lt;br&gt;・WAF適用しているドメインが一部あり" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;size=25;position=0.4;position2=0.25;align=center;" vertex="1" parent="1">
+          <mxGeometry x="350" y="235" width="170" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-35" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="340" as="sourcePoint" />
+            <mxPoint x="540" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-36" value="API Gateway" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="275" y="610" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-41" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="495" y="587.5" width="150" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-40" value="Lambda Function" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="x0Aub4gDLJdSEWuk1Uv5-41">
+          <mxGeometry x="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-39" value="Lambda Function" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="x0Aub4gDLJdSEWuk1Uv5-41">
+          <mxGeometry x="20" y="15" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-38" value="Lambda Function" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="x0Aub4gDLJdSEWuk1Uv5-41">
+          <mxGeometry x="10" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-37" value="Lambda Function" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="x0Aub4gDLJdSEWuk1Uv5-41">
+          <mxGeometry y="45" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-43" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="405" y="640" as="sourcePoint" />
+            <mxPoint x="485" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-45" value="kintone&lt;br&gt;REST API" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="745" y="500" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-46" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="655" y="600" as="sourcePoint" />
+            <mxPoint x="743" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-50" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="745" y="650" width="108.25" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-49" value="DynamoDB&lt;br&gt;Table" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="x0Aub4gDLJdSEWuk1Uv5-50">
+          <mxGeometry x="31.75" width="76.5" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-48" value="DynamoDB&lt;br&gt;Table" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="x0Aub4gDLJdSEWuk1Uv5-50">
+          <mxGeometry x="21.75" y="10" width="76.5" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-47" value="DynamoDB&lt;br&gt;Table" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="x0Aub4gDLJdSEWuk1Uv5-50">
+          <mxGeometry x="10" y="20" width="76.5" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-44" value="DynamoDB&lt;br&gt;Table" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="x0Aub4gDLJdSEWuk1Uv5-50">
+          <mxGeometry y="30" width="76.5" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-51" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="655" y="675" as="sourcePoint" />
+            <mxPoint x="735" y="703" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-52" value="・データの CRUD 操作&lt;br&gt;・ログイン/ログアウト" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="35" y="500" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-53" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="x0Aub4gDLJdSEWuk1Uv5-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="360" as="sourcePoint" />
+            <mxPoint x="160" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-54" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="x0Aub4gDLJdSEWuk1Uv5-36">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="430" as="sourcePoint" />
+            <mxPoint x="170" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-55" value="Cognito&lt;br&gt;User Pool" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="305" y="762" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-56" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="x0Aub4gDLJdSEWuk1Uv5-55" target="x0Aub4gDLJdSEWuk1Uv5-36">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="325" y="750" as="sourcePoint" />
+            <mxPoint x="375" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-57" value="認証ありの chobiit アプリではユーザー認証する" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;size=30;position=0.25;position2=0.08;" vertex="1" parent="1">
+          <mxGeometry x="345" y="700" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-63" value="Route53 (chobiit.me zone)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-70" y="140" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-64" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="x0Aub4gDLJdSEWuk1Uv5-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="45" y="320" as="sourcePoint" />
+            <mxPoint x="90" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-65" value="ドメインごとに1つ" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" vertex="1" parent="1">
+          <mxGeometry x="55" y="110" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-67" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="x0Aub4gDLJdSEWuk1Uv5-36">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="960" as="sourcePoint" />
+            <mxPoint x="110" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x0Aub4gDLJdSEWuk1Uv5-68" value="chobiit 設定の取得・更新" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry y="900" width="85" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

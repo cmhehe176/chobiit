@@ -1,0 +1,24 @@
+{
+  "name": "chobiit-download-file",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LongDoan",
+  "license": "ISC",
+  "dependencies": {
+    "atob": "^2.1.2",
+    "axios": "^0.18.0",
+    "b64-to-blob": "^1.2.19",
+    "based-blob": "^1.0.1",
+    "blob": "0.0.5",
+    "busboy": "^0.3.0",
+    "file-system": "^2.2.2",
+    "form-data": "^2.3.3",
+    "jsonwebtoken": "^8.4.0",
+    "path": "^0.12.7",
+    "request": "^2.88.0"
+  }
+}

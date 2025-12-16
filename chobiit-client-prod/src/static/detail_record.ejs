@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="<%= chobiitLang %>">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chobiit</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        iframe {
+            width: 100%;
+            overflow: scroll;
+            border: none;
+        }
+
+        nav {
+            padding-top: 70px;
+        }
+
+        @media screen and (max-width: 767.98px) {
+            nav {
+                padding-top: 0px;
+            }
+        }
+
+        .app-menu-icon {
+            display: inline-block;
+            vertical-align: middle;
+            box-sizing: border-box;
+            border: none;
+            margin-left: 8px;
+            width: 48px;
+            height: 48px;
+            background-color: #fff;
+            background-position: center center;
+            background-repeat: no-repeat;
+            color: transparent;
+        }
+
+        .app-menu-icon:focus {
+            outline: none;
+        }
+
+        .app-menu-icon:hover {
+            color: transparent;
+            cursor: pointer;
+        }
+
+        .add-record-btn {
+            background-image: url('./images/add-record.png');
+        }
+
+        .add-record-btn:hover {
+            background-image: url('./images/add-record-active.png');
+        }
+
+        .edit-record-btn {
+            background-image: url('./images/edit-record.png');
+        }
+
+        .edit-record-btn:hover {
+            background-image: url('./images/edit-record-active.png');
+        }
+
+        .duplicate-record-btn {
+            background-image: url('./images/duplicate-record.png');
+        }
+
+        .duplicate-record-btn:hover {
+            background-image: url('./images/duplicate-record-active.png');
+        }
+
+        .edit-menu {
+            display: flex;
+            align-items: center;
+            visibility: hidden;
+            padding-bottom: 15px;
+            padding-top: 10px;
+            padding-left: 15px;
+        }
+
+        .action-btn {
+            border-radius: 5rem;
+            color: #fff;
+            background: #2196F3;
+            margin: .75rem 1rem 2rem 1rem;
+        }
+
+        .action-btn:hover {
+            background: #2183f3;
+        }
+    </style>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/auth.js"></script>
+</head>
+
+<body>
+    <div id="loader" class="se-pre-con" style="display: none"></div>
+
+    <div class="row-offcanvas row-offcanvas-left" id="rowOffCanvas">
+        <!-- Side bar -->
+        <div class="sidebar sidebar-offcanvas" id="sidebar">
+            <div class="col-md-12 p-0">
+                <div class="brand-title d-flex flex-row align-items-center justify-content-center">
+                    <img src="./images/header_logo.png" style="width: 95%;">
+                </div>
+                <div class="brand-user">
+                    <h6 class="text-center need-username"></h6>
+                </div>
+                <nav class="nav flex-column pt-5" id="mainMenu">
+                    <a class="nav-link d-flex justify-content-between main-item active" href="./list_app.html">
+                        <span class="nav-link-title"><i class="fas fa-home"></i><%= message.info["home"] %></span>
+                        <!-- <span class="align-self-center"><i class="fas fa-angle-right"></i></span> -->
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <div id="content">
+            <!-- Header -->
+            <header class="header d-flex flex-row align-items-center fixed-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
+                            <img class="logo">
+                        </div>
+                        <div class="col-6 text-right">
+                            <div class="dropdown">
+                                <span><img alt="32x32" class="mr-2 rounded-circle" src="./images/user.png" ;="" style="width: 32px; height: 32px; "></span>
+                                <button class="btn btn-transparent dropdown-toggle need-username" type="button" id="dropdownMenuButton" style ="padding-left: 0px"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a id="logout" class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i><%= message.info["logout"] %></a>
+                                    <a id="changeUserInfo" class="dropdown-item" href="#"><i class="fas fa-user-alt"></i><%= message.info["user-information"] %></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="col-md-12 px-0 pt-2" id="mainContainer">
+                <p class="d-sm-block d-md-none">
+                    <button type="button" class="btn btn-outline-info btn-sm" onclick="toggleClass(document.getElementById('rowOffCanvas'), 'active')">
+                        <i class="fas fa-angle-left"></i>
+                    </button>
+                </p>
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="need-domain-name"></a></li>
+                        <li class="breadcrumb-item list-record-link"><a href="#" class="need-app-name"></a></li>
+                        <li class="breadcrumb-item " id="detail-or-edit-screen" aria-current="page"><%= message.info["record-detail"] %></li>
+                    </ol>
+                </nav>
+
+                <!-- Content -->
+                <div class="row">
+                    <!-- form -->
+                    <div class="col-md-12 mb-3">
+                        <div id="mainContent">
+                        <div class="d-flex flex-wrap justify-content-between follow">
+                            <div class="edit-menu" id="editMenu">
+                                <button type="button" class="btn btn-cancel mr-1" id="cancelEditBtn"><%= message.common["cancel-title"] %></button>
+                                <button type="button" class="btn btn-green" id="submitEditBtn"><%= message.common["save-title"] %></button>
+                            </div>
+                            <div class="app-menu" id="appMenu">
+                                <button class="app-menu-icon add-record-btn" title="<%= message.info["create-a-record"] %>" id="addRecordBtn"></button>
+                                <button class="app-menu-icon edit-record-btn" title="<%= message.info["edit-the-record"] %>" id="editRecordBtn"></button>
+                                <button class="app-menu-icon duplicate-record-btn" title="<%= message.info["reuse-records"] %>" id="duplicateRecordBtn"></button>
+                            </div>
+                        </div>
+
+                        <!--<button class="btn shadow" id="action-button" style="display: none;"></button>-->
+                        <div id="action-button" style="display: none;"></div>
+
+                        <iframe id="iframe" src=""></iframe>
+                        </div>
+                    </div>
+                    <!-- end form -->
+
+                    <!-- comment -->
+                    <div class="col-md-4" style="display:none; margin-bottom: 4rem;">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="comment-box">
+                                    <textarea class="form-control" id="commentContent" style="margin-top: 0px; margin-bottom: 0px; height: 150px; font-size: 0.9rem"></textarea>
+                                    <br>
+                                    <button type="button" class="btn btn-green" style="width: 100%" id="commentBtn"><%= message.info["post-a-comment"] %></button>
+                                </div>
+                                <hr>
+                                <div id="commentContanier">
+                                </div>
+                            </div>
+                       </div>
+                    </div>    
+                    <!-- end comment -->
+                </div>
+
+                <div id="myModal" class="modal">
+                    <span class="img-close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                    <a class="img-down btn btn-info">
+                        <i class="fas fa-cloud-download-alt"></i><%= message.common["action-download"] %>
+                    </a>
+                </div>
+
+                <!-- End content -->
+            </div>
+        </div>
+    </div>
+
+     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://js.cybozu.com/sweetalert/v2.1.2/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="./js/logout.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/detail-record.js"></script>
+</body>
+
+</html>

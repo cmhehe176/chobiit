@@ -1,0 +1,44 @@
+name: CI Workflow
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  ci-chobiit-common:
+    runs-on: kintone-dev-larger-runner-1
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+      - run: npm ci
+      - run: cd chobiit-common/ && npm ci && cd ../
+      - run: npm run test:chobiit-common
+
+  ci-chobiit-client:
+    runs-on: kintone-dev-larger-runner-1
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+      - run: npm ci
+      - run: cd chobiit-common/ && npm ci && cd ../
+      - run: cd chobiit-client-prod/ && npm ci && cd ../
+      - run: npm run test:chobiit-client
+          
+  ci-chobiit-backend:
+    runs-on: kintone-dev-larger-runner-1
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+      - run: npm ci
+      - run: cd chobiit-common/ && npm ci && cd ../
+      - run: cd chobiit-backend/ && npm ci && cd ../
+      - run: npm run test:chobiit-backend

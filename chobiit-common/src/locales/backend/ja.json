@@ -1,0 +1,29 @@
+{
+    "error": {
+        "not-permitted": "権限がありません。",
+        "has-no-privilege": "権限がありません。",
+        "missing-record-data": "レコードデータに誤りがあります。",
+        "invalid-token": "使用しているトークンは無効です。",
+        "server-access-is-full": "ただいまサーバーが混み合っています。一時保存ボタンを押下し、しばらくたってから再度登録をお願い致します。",
+        "not-found-user": "ユーザー情報を取得できませんでした。システム管理者にお問い合わせください。",
+        "too-many-lookup-results": "候補が多すぎます。キーワードを入力してから取得ボタンクリックをお試しください。"
+    },
+    "validation": {
+        "free-trial-expired": "利用終了です。",
+        "invalid-start-end-date-format": "開始日または終了日の形式が正しくありません"
+    },
+    "info": {
+        "no-record-available": "参照するレコードがありません。",
+        "mail-notice-heading": "Chobiitから通知が届きました。",
+        "mail-notice-body": "{{name}}さん\n\n{{annocument}}\n\nレコードを確認する場合はこちら\n{{recordUrl}}"
+    },
+    "common": {
+        "lookup": "取得",
+        "clear": "クリア",
+        "choose-file": "参照"
+    },
+    "kintone-error": {
+        "CB_PE01": "関連するkintoneアカウントのパスワードの有効期限が切れています。システム管理者にお問い合わせください。",
+        "CB_WA01": "関連するkintoneアカウントのパスワードに誤りがあります。システム管理者にお問い合わせください。"
+    }
+}

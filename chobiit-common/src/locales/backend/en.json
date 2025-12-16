@@ -1,0 +1,30 @@
+{
+    "error": {
+        "not-permitted": "Not authorized.",
+        "has-no-privilege": "No privilege to proceed.",
+        "missing-record-data": "Missing record data.",
+        "invalid-token": "Invalid token.",
+        "server-access-is-full": "The server is busy right now. Please press the temporary save button and register again after a while.",
+        "not-found-user": "Could not retrieve user information. Please contact the system administrator for assistance.",
+        "too-many-lookup-results": "There are too many candidates. Please try entering a keyword and then clicking the Get button."
+
+    },
+    "validation": {
+        "free-trial-expired": "The free trial period has expired.",
+        "invalid-start-end-date-format": "Incorrect start or end date format."
+    },
+    "info": {
+        "no-record-available": "No data available in table。",
+        "mail-notice-heading": "Notification has been received from Chobiit",
+        "mail-notice-body": "Dear {{name}}\n\n{{annocument}}\n\nIf you want to check the record, click here\n{{recordUrl}}"
+    },
+    "common": {
+        "lookup": "Lookup",
+        "clear": "Clear",
+        "choose-file": "Choose File"
+    },
+    "kintone-error": {
+        "CB_PE01": "The password of the associated parent account is expired. Please contact the system administrator for assistance.",
+        "CB_WA01": "The password of the associated parent account is incorrect. Please contact the system administrator for assistance."
+    }
+}

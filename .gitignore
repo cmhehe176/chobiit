@@ -1,0 +1,9 @@
+node_modules/
+chobiit-client-prod/build/
+chobiit-config-prod/build/
+chobiit-config-prod/manifest.json
+chobiit-config-prod/plugin/**/*.zip
+chobiit-backend/build/
+.idea
+.DS_Store
+logs/
